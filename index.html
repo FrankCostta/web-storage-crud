@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DATA STORAGE</title>
+    <link rel="stylesheet" href="main.css"/>
+    <!-- Fontwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    
+    <div class="modal">
+        <div id="modal-close"><i class="fa fa-close"></i></div>
+        <div class="modal-content">
+            
+            <h3>CADASTRAR NOVO PRODUTO</h3>
+            <hr />
+            <form class="modal-form">
+                <label>NOME DO PRODUTO: </label>
+                <input type="text" id="nome"/>
+                
+                <label>PREÇO: </label>
+                <input type="number" id="preco"/>
+                
+                <button type="submit">CONFIRMAR</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="new-registration">
+            NOVO CADASTRO
+        </div>
+        
+        <hr />
+        
+        <div class="registers">
+            <h4>REGISTROS</h4>
+            
+            
+            <div class="logbar">
+                <div class="info-bar">
+                    <div class="id-box">0</div>
+                    <div class="description-box">
+                        Notebook Asus 16GB RAM
+                    </div>
+                </div>
+                <div class="options-bar">
+                    <button class="rename"><i class="fa fa-edit"></i></button>
+                    <button class="delete"><i class="fa fa-trash"></i></button>
+                </div>
+            </div>
+            
+            <div class="logbar">
+                <div class="info-bar">
+                    <div class="id-box">1</div>
+                    <div class="description-box">
+                        Iphone 13 Pro Max
+                    </div>
+                </div>
+                <div class="options-bar">
+                    <button class="rename"><i class="fa fa-edit"></i></button>
+                    <button class="delete"><i class="fa fa-trash"></i></button>
+                </div>
+            </div>
+            
+            <div class="logbar">
+                <div class="info-bar">
+                    <div class="id-box">2</div>
+                    <div class="description-box">
+                        JBL Partybox 1000
+                    </div>
+                </div>
+                <div class="options-bar">
+                    <button class="rename"><i class="fa fa-edit"></i></button>
+                    <button class="delete"><i class="fa fa-trash"></i></button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>
