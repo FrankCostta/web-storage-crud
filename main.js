@@ -1,4 +1,4 @@
-const newRegist = document.querySelector('.new-registration')
+const newRegist = document.querySelector('.new-registration');
 const modalClose = document.querySelector('#modal-close');
 
 const inputName = document.querySelector('#nome');
@@ -16,16 +16,24 @@ modalClose.addEventListener('click', () => {
     inputName.value = inputPreco.value = '';
 });
 
-let id = 0;
 function setDataStorage() {
-    const name = document.querySelector('#nome').value;
-
-    if (getDataStorage() == null) {}
-    const data = getDataStorage() + name
+    const productName = document.querySelector('#nome').value;
+    const productValue = document.querySelector('#preco').value;
     
-    localStorage.setItem('database', data)
+    const storageItem = localStorage.getItem('database');
+    if (storageItem == null) {
+        localStorage.setItem('database', '[]');
+    }
+    const data = getDataStorage();
+    const convertToJson = JSON.parse(data); 
+    convertToJson.push({product: productName, price: productValue});
+    const convertToString = JSON.stringify(convertToJson);
+
+    // Adiciona um novo array do tipo "object"
+    localStorage.setItem('database', convertToString);
 }
 
+//Obtem os dados do localStorage
 function getDataStorage() {
     return localStorage.getItem('database');
 }
@@ -44,3 +52,14 @@ function setTemplate(id, info) {
         </div>
     `);
 }
+
+function updateDisplay() {
+    const data = JSON.parse(getDataStorage());
+    const logbox = document.querySelector('.log-box');
+    
+    for (let i = 0; i < data.length; i++) {
+        logbox.innerHTML += setTemplate(data[i].price, data[i].product);
+    }
+}
+
+updateDisplay();
